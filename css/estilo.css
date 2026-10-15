@@ -1,6 +1,48 @@
 body {
   background-image: url('imagenes/fondo.jpg');
-  background-repeat: repeat; /* O 'no-repeat' con 'background-size: cover' si prefieres una sola imagen fija */
+  background-repeat: repeat;
   background-attachment: fixed;
-  color: #333333; /* Garantiza un buen contraste de texto */
+  font-family: Arial, sans-serif;
+  color: #333333;
+  margin: 0;
+  padding: 20px 10px;
+}
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.93);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #b33939;
+  text-align: center;
+}
+
+h2 {
+  color: #d15b47;
+  border-bottom: 2px solid #f3d1c9;
+  padding-bottom: 5px;
+}
+
+ul, ol {
+  line-height: 1.6;
+}
+
+img, iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.media-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+a {
+  color: #cd6133;
+  font-weight: bold;
 }
