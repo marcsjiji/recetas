@@ -1,0 +1,6 @@
+body {
+  background-image: url('imagenes/fondo.jpg');
+  background-repeat: repeat; /* O 'no-repeat' con 'background-size: cover' si prefieres una sola imagen fija */
+  background-attachment: fixed;
+  color: #333333; /* Garantiza un buen contraste de texto */
+}
