@@ -17,7 +17,6 @@
                             red: '#b32d00',
                             orange: '#e65c00',
                             dark: '#3d1c02',
-                            cream: '#fff8f0',
                             pinkBg: '#ffeef4',
                             pinkBorder: '#ffc2d6',
                             pinkIcon: '#d86b8c'
@@ -31,15 +30,22 @@
         }
     </script>
     <style>
-        /* Fondo gastronómico con patrón sutil */
+        /* Fondo con la imagen ilustrada directamente */
         body {
-            background-color: #fff8f0;
-            background-image:
-                radial-gradient(#e65c00 0.75px, transparent 0.75px),
-                radial-gradient(#e65c00 0.75px, #fff8f0 0.75px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
+            background-color: #f7f3ec;
+            background-image: url('https://raw.githubusercontent.com/marcsjiji/recetas/main/fondo_ilustrado.jpg');
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
+            background-repeat: repeat;
+        }
+
+        /* Fallback si la url anterior no carga */
+        @supports (background-image: url('')) {
+            body {
+                background-image: url('https://raw.githubusercontent.com/marcsjiji/recetas/main/fondo_ilustrado.jpg'),
+                                  radial-gradient(#e65c00 0.75px, #fff8f0 0.75px);
+            }
         }
 
         /* Utilidad para iframe responsivo (16:9) */
@@ -59,26 +65,26 @@
         }
     </style>
 </head>
-<body class="text-gray-800 antialiased min-h-screen py-6 px-3 sm:px-6 md:py-10">
+<body class="text-gray-900 antialiased min-h-screen py-6 px-3 sm:px-6 md:py-10">
 
-    <!-- Contenedor Principal Adaptable -->
-    <main class="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-100 p-4 sm:p-8 md:p-12 transition-all duration-300">
+    <!-- Contenedor Principal SIN Recuadro Blanco (Fondo Transparente) -->
+    <main class="max-w-4xl mx-auto p-2 sm:p-6 md:p-8">
 
         <!-- Encabezado Principal -->
-        <header class="text-center mb-6 border-b border-amber-200/60 pb-6">
-            <span class="inline-block bg-amber-100 text-brand-red text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-sm">
+        <header class="text-center mb-8 border-b border-amber-900/20 pb-6">
+            <span class="inline-block bg-amber-200/80 text-brand-red text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3 shadow-sm border border-amber-300">
                 Gastronomía Japonesa • Osaka
             </span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-red tracking-tight leading-tight mb-3">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-red tracking-tight leading-tight mb-3 drop-shadow-sm">
                 ¿Cómo Preparar Okonomiyaki?
             </h1>
-            <p class="text-sm sm:text-base text-gray-600 max-w-xl mx-auto mb-5">
+            <p class="text-sm sm:text-base text-gray-800 font-medium max-w-xl mx-auto mb-5">
                 Aprende a preparar el auténtico Okonomiyaki estilo Kansai en casa con esta guía paso a paso.
             </p>
 
             <!-- Barra de Redes Sociales centrada debajo del título -->
             <div class="flex justify-center my-4">
-                <div class="bg-[#ffeef4] border-2 border-[#ffc2d6] rounded-full px-6 py-2.5 flex items-center justify-center gap-4 sm:gap-6 shadow-sm max-w-md w-full">
+                <div class="bg-[#ffeef4]/90 border-2 border-[#ffc2d6] rounded-full px-6 py-2.5 flex items-center justify-center gap-4 sm:gap-6 shadow-md max-w-md w-full backdrop-blur-sm">
                     <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Abrir WhatsApp"
                        class="w-10 h-10 sm:w-11 sm:h-11 bg-[#d86b8c] hover:bg-[#c25575] text-white rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md">
                         <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
@@ -100,11 +106,11 @@
         </header>
 
         <!-- Sección de Ingredientes -->
-        <section class="mb-10 bg-amber-50/70 rounded-xl p-5 sm:p-7 border border-amber-200">
-            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-4 flex items-center gap-2 border-b border-amber-200 pb-2">
+        <section class="mb-10 bg-amber-100/40 backdrop-blur-xs rounded-xl p-5 sm:p-7 border border-amber-900/10 shadow-sm">
+            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-4 flex items-center gap-2 border-b border-amber-900/20 pb-2">
                 Ingredientes (2 porciones)
             </h2>
-            <ul class="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-700">
+            <ul class="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-800 font-medium">
                 <li><strong>100 gramos</strong> de harina de trigo</li>
                 <li><strong>120 ml</strong> de caldo dashi (o agua con un toque de caldo de pescado en polvo)</li>
                 <li><strong>1/4 de cucharadita</strong> de polvo para hornear</li>
@@ -117,26 +123,26 @@
 
         <!-- Pasos de preparación -->
         <section class="mb-10">
-            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-6 flex items-center gap-2 border-b border-gray-200 pb-2">
+            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-6 flex items-center gap-2 border-b border-amber-900/20 pb-2">
                 Pasos de preparación
             </h2>
             <ol class="space-y-4">
-                <li class="p-4 rounded-lg bg-gray-50 border-l-4 border-brand-orange text-sm sm:text-base">
+                <li class="p-4 rounded-lg bg-white/40 backdrop-blur-xs border-l-4 border-brand-orange text-sm sm:text-base shadow-sm">
                     <strong class="text-brand-red">1. Preparar la masa:</strong> En un tazón grande, mezcla la harina y el polvo para hornear. Añade el caldo dashi frío y bate suavemente hasta obtener una masa homogénea. Deja reposar en el refrigerador por 1 hora para mejorar la textura.
                 </li>
-                <li class="p-4 rounded-lg bg-gray-50 border-l-4 border-brand-orange text-sm sm:text-base">
+                <li class="p-4 rounded-lg bg-white/40 backdrop-blur-xs border-l-4 border-brand-orange text-sm sm:text-base shadow-sm">
                     <strong class="text-brand-red">2. Incorporar el relleno:</strong> Saca la masa del refrigerador. Añade el repollo finamente picado y los huevos. Mezcla todo con una cuchara haciendo movimientos envolventes. No sobremezcles, la consistencia debe ser aireada.
                 </li>
-                <li class="p-4 rounded-lg bg-gray-50 border-l-4 border-brand-orange text-sm sm:text-base">
+                <li class="p-4 rounded-lg bg-white/40 backdrop-blur-xs border-l-4 border-brand-orange text-sm sm:text-base shadow-sm">
                     <strong class="text-brand-red">3. Cocinar la base:</strong> Calienta una sartén antiadherente a fuego medio con un chorrito de aceite. Vierta la mitad de la mezcla formando un círculo grueso (de unos 2 centímetros de grosor). Dale forma redondeada con una espátula.
                 </li>
-                <li class="p-4 rounded-lg bg-gray-50 border-l-4 border-brand-orange text-sm sm:text-base">
+                <li class="p-4 rounded-lg bg-white/40 backdrop-blur-xs border-l-4 border-brand-orange text-sm sm:text-base shadow-sm">
                     <strong class="text-brand-red">4. Añadir el cerdo:</strong> Coloca 2 lonjas de panceta sobre la superficie del okonomiyaki. Cocina tapado durante unos 5 minutos hasta que la base esté dorada y el repollo empiece a ablandarse.
                 </li>
-                <li class="p-4 rounded-lg bg-gray-50 border-l-4 border-brand-orange text-sm sm:text-base">
+                <li class="p-4 rounded-lg bg-white/40 backdrop-blur-xs border-l-4 border-brand-orange text-sm sm:text-base shadow-sm">
                     <strong class="text-brand-red">5. Dar la vuelta:</strong> Da la vuelta al okonomiyaki con cuidado usando dos espátulas. Cocina destapado por otros 5 minutos presionando levemente con una espátula muy ligera, asegurándote de que la carne quede crujiente y bien cocida.
                 </li>
-                <li class="p-4 rounded-lg bg-gray-50 border-l-4 border-brand-orange text-sm sm:text-base">
+                <li class="p-4 rounded-lg bg-white/40 backdrop-blur-xs border-l-4 border-brand-orange text-sm sm:text-base shadow-sm">
                     <strong class="text-brand-red">6. Decorar y servir:</strong> Dale la vuelta una última vez (dejando la carne hacia arriba). Pásalo a un plato y decóralo haciendo hilos con la salsa okonomiyaki y la mayonesa. Riega con cebollín picado y copos de bonito por encima. ¡Se sirve inmediatamente!
                 </li>
             </ol>
@@ -144,7 +150,7 @@
 
         <!-- Imagen principal de la sartén con Okonomiyaki -->
         <section class="mb-10 text-center">
-            <div class="overflow-hidden rounded-xl shadow-md border border-gray-200 bg-black">
+            <div class="overflow-hidden rounded-xl shadow-lg border border-amber-900/20 bg-black">
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Okonomiyaki_001.jpg/1200px-Okonomiyaki_001.jpg"
                     onerror="this.src='https://recetinas.com/wp-content/uploads/2023/10/okonomiyaki.jpg'"
@@ -152,15 +158,15 @@
                     class="w-full h-auto max-h-[500px] object-cover hover:scale-102 transition-transform duration-300"
                 />
             </div>
-            <p class="text-xs sm:text-sm text-gray-500 mt-2 italic">Plato final de Okonomiyaki servido en sartén de hierro con salsa y mayonesa rayada.</p>
+            <p class="text-xs sm:text-sm text-gray-700 mt-2 italic font-medium">Plato final de Okonomiyaki servido en sartén de hierro con salsa y mayonesa rayada.</p>
         </section>
 
         <!-- Lugar del cual proviene la receta (Mapa de Osaka) -->
         <section class="mb-10">
-            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
+            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-4 flex items-center gap-2 border-b border-amber-900/20 pb-2">
                 Lugar del cual proviene la receta
             </h2>
-            <div class="aspect-video-container rounded-xl shadow-md overflow-hidden border border-gray-200">
+            <div class="aspect-video-container rounded-xl shadow-lg overflow-hidden border border-amber-900/20">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209988.96328574163!2d135.38922258832966!3d34.67757037042548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6553406e2e1%3A0x239f372674e2ac2e!2sOsaka%2C%20Jap%C3%B3n!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar"
                     allowfullscreen=""
@@ -172,10 +178,10 @@
 
         <!-- Video Explicativo -->
         <section class="mb-10">
-            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
+            <h2 class="text-xl sm:text-2xl font-bold text-brand-red mb-4 flex items-center gap-2 border-b border-amber-900/20 pb-2">
                 Video explicativo
             </h2>
-            <div class="aspect-video-container rounded-xl shadow-md overflow-hidden border border-gray-200">
+            <div class="aspect-video-container rounded-xl shadow-lg overflow-hidden border border-amber-900/20">
                 <iframe
                     src="https://www.youtube-nocookie.com/embed/fA_XGgJ_z84"
                     title="Prepara OKONOMIYAKI con ingredientes Fáciles | Cocina Japonesa Con Yuta"
@@ -186,7 +192,7 @@
         </section>
 
         <!-- Sección de Más Recetas -->
-        <section class="bg-amber-50/80 rounded-xl p-5 sm:p-7 border border-amber-200">
+        <section class="bg-amber-100/40 backdrop-blur-xs rounded-xl p-5 sm:p-7 border border-amber-900/10 shadow-sm">
             <h2 class="text-lg sm:text-xl font-bold text-brand-red mb-4 uppercase tracking-wide">
                 MÁS RECETAS POR SI TE QUEDASTE CON HAMBRE
             </h2>
@@ -223,8 +229,8 @@
         </section>
 
         <!-- Barra de Redes Sociales en el Centro al Final de Todo -->
-        <section class="mt-8 pt-6 border-t border-gray-200 flex justify-center">
-            <div class="bg-[#ffeef4] border-2 border-[#ffc2d6] rounded-full px-6 py-2.5 flex items-center justify-center gap-4 sm:gap-6 shadow-sm max-w-md w-full">
+        <section class="mt-8 pt-6 border-t border-amber-900/20 flex justify-center">
+            <div class="bg-[#ffeef4]/90 border-2 border-[#ffc2d6] rounded-full px-6 py-2.5 flex items-center justify-center gap-4 sm:gap-6 shadow-md max-w-md w-full backdrop-blur-sm">
                 <!-- WhatsApp -->
                 <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Abrir WhatsApp"
                    class="w-10 h-10 sm:w-11 sm:h-11 bg-[#d86b8c] hover:bg-[#c25575] text-white rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md">
@@ -254,7 +260,7 @@
     </main>
 
     <!-- Pie de página -->
-    <footer class="text-center text-xs text-gray-500 mt-8">
+    <footer class="text-center text-xs text-gray-700 font-medium mt-8 pb-4">
         <p>© Receta de Okonomiyaki - Adaptable para PC, Tablet y Celular</p>
     </footer>
 
